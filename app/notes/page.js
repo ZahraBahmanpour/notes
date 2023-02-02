@@ -8,7 +8,7 @@ import CreateNote from "./CreateNote";
 //   runtime = 'nodejs',
 //   preferredRegion = 'auto'
 
-async function getNotes() {
+export async function getNotes() {
   const res = await fetch("https://6300a18859a8760a757d441c.mockapi.io/posts", {
     cache: "no-store",
   });

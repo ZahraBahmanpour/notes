@@ -1,4 +1,5 @@
 import styles from "../Notes.module.css";
+import { getNotes } from "../page";
 
 async function getNote(id) {
   const res = await fetch(
@@ -24,4 +25,12 @@ export default async function NotePage({ params }) {
       </div>
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  const posts = await getNotes();
+
+  return posts.map((post) => ({
+    id: post.id,
+  }));
 }
