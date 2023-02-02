@@ -1,5 +1,6 @@
 import styles from "./Notes.module.css";
 import Note from "../../components/note";
+import CreateNote from "./CreateNote";
 // export const dynamic = 'auto',
 //   dynamicParams = true,
 //   revalidate = 0,
@@ -26,6 +27,7 @@ export default async function NotesPage() {
           return <Note key={note.id} {...note} />;
         })}
       </div>
+      <CreateNote />
     </div>
   );
 }
